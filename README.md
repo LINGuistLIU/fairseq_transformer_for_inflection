@@ -57,11 +57,6 @@ NOTE: The training takes a long time, especially if you run on a CPU.
 
 To make the predictions for the dev or test data for a specific language, use the following command line. 
 
-When you run on the dev set, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, find out models with the first 5 highest accuracy scores on the dev set, keep predictions from these five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, and delete all other models.
-It will keep the inflected form with the first five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
-
-When you run on the test set, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
-
 ```
 $ ./generate_eval.sh 3LETTER-LANGUAGE-CODE TYPE
 ```
@@ -74,4 +69,7 @@ For example, to make predictions for the English dev set, use the following comm
 $ ./generate_eval.sh eng dev
 ```
 
+When you run on the dev set, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, find out models with the first 5 highest accuracy scores on the dev set, keep predictions from these five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, and delete all other models.
+It will keep the inflected form with the first five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
 
+When you run on the test set, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
