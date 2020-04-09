@@ -34,7 +34,7 @@ def first5accurate(pred_dir):
                 if v == id2pred[k]:
                     correct += 1
             file_acc_list.append((item, round(correct/guess, 6)))
-    if len(file_acc_list) < 5:
+    if len(file_acc_list) <= 5:
         final_list = file_acc_list
         print('The saved models and acc on the dev set:')
     else:
