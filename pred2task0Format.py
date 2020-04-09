@@ -24,7 +24,12 @@ with open('checkpoints/'+lang+'-predictions/'+type+'-checkpoint_best.pt.txt') as
             id2pred[id] = pred.replace(' ', '')
     inputlines = [line.strip() for line in finput]
     for i, line in enumerate(inputlines):
-        lemma, _, msd = line.strip().split('\t')
+        lines = line.strip().split('\t')
+        if len(lines) == 3 or len(lines) == 2:
+            lemma = lines[0]
+            msd = lines[-1]
+        else:
+            print('Please make sure each line in your file is a tab separated 3-column entry.')
         fw.write('\t'.join([lemma, id2pred[i], msd]) + '\n')
 
 
