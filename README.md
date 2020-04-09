@@ -2,7 +2,7 @@ This repository is about how to use the Transformer model from [Fairseq](https:/
 
 You can find more information about how to use Fairseq from command line [here](https://fairseq.readthedocs.io/en/latest/command_line_tools.html).
 
-## Requirementes
+## Dependencies
 
 - PyTorch version >= 1.4.0
 
