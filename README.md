@@ -8,7 +8,9 @@ You can find more information about how to use Fairseq from command line [here](
 
 - Python version >= 3.6
 
-- Fairseq (pip install fairseq)
+- Fairseq (```pip install fairseq```)
+
+- numpy (```pip install numpy```)
 
 ## Fairseq transformer for inflection
 
