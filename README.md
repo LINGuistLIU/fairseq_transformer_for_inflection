@@ -17,9 +17,9 @@ To use the transformer model from Fairseq for inflection, you can preprocess you
 
 ### Preprocess
 
-This process presupposes that you have stored the SIGMORPHON 2020 Share Task0 data in the directory *task0-data/*.
+This process presupposes that you have stored the SIGMORPHON 2020 Share Task0 data in the directory ```task0-data/```.
 
-It preprocesses the train, dev, test (if there is test) data of the language you specify into the format Fairseq requires. The preprocessed data will be stored in *data-bin/* 
+It preprocesses the train, dev, test (if there is test) data of the language you specify into the format Fairseq requires. The preprocessed data will be stored in ```data-bin/```. 
 
 Command line to preprocess the data:
 
@@ -37,18 +37,18 @@ $ ./preprocess.sh eng
 
 To train the model for a specific language, use the following command line:
 
-The trained models will be save in the directory *checkpoints/3LETTER-LANGUAGE-CODE-models/*.
+The trained models will be save in the directory ```checkpoints/3LETTER-LANGUAGE-CODE-models/```.
 
 ```
 $ ./train.sh 3LETTER-LANGUAGE-CODE
 ```
-For example, the following command line will train the model on the English training data, and will save the models in *checkpoints/eng-models/*
+For example, the following command line will train the model on the English training data, and will save the models in ```checkpoints/eng-models/```.
 
 ```
 $ ./train.sh eng
 ```
 
-You can change parameters at the beginning of *train.sh* for parameter tuning.
+You can change parameters at the beginning of ```train.sh``` for parameter tuning.
 
 NOTE: The training takes a long time, especially if you run on a CPU.
 
@@ -56,7 +56,7 @@ NOTE: The training takes a long time, especially if you run on a CPU.
 
 To make the predictions for the dev or test data for a specific language, use the following command line.
 
-It will generate the inflected form with the best model for the language and data you specify, give you the evaluation scores from the shared task evaluation metric, and store the predictions in the directory *predictions/*.
+It will generate the inflected form with the best model for the language and data you specify, give you the evaluation scores from the shared task evaluation metric, and store the predictions in the directory ```predictions/```.
 
 ```
 $ ./generate_eval.sh 3LETTER-LANGUAGE-CODE TYPE
@@ -70,4 +70,4 @@ For example, to make predictions for the English dev set, use the following comm
 $ ./generate_eval.sh eng dev
 ```
 
-The current script generates only with the best model on the training data. You can modify line 19 of the *generate_eval.sh* to make it generate with other models.
+The current script generates only with the best model on the training data. You can modify line 19 of ```generate_eval.sh``` to make it generate with other models.
