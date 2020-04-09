@@ -12,7 +12,7 @@ You can find more information about how to use Fairseq from command line [here](
 
 ## Fairseq transformer for inflection
 
-To use the transformer model from Fairseq to inflection, you need to first preprocess your data, train the model, and generate and evaluate as the following step:
+To use the transformer model from Fairseq for inflection, you can preprocess your data, train the model, and generate and evaluate as the following steps:
 
 ### Preprocess
 
