@@ -17,7 +17,7 @@ def goldid2input(fname):
 def id2pred(fname):
     id2pred_dict = {}
     with open(fname) as f:
-        for line in fpred:
+        for line in f:
             if line[:2] == 'H-':
                 id, score, pred = line.strip().split('\t')
                 id = int(id.split('-')[1])
@@ -44,9 +44,9 @@ if __name__ == '__main__':
     lang = sys.argv[1]
     type = sys.argv[2]  # dev or test
 
-    output_dir = 'predictions/'
-    if not os.path.exists(outputdir):
-        os.makedirs(outputdir)
+    output_dir = 'predictions/'+lang+'/'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     pred_dir = 'checkpoints/' + lang + '-predictions/'
     fgoldname = 'task0-data/'+lang+'.'+type
 

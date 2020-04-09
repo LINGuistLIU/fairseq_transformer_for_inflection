@@ -13,11 +13,11 @@ def file2dict(fname):
         for line in f:
             if 'T-' in line:
                 id, gold = line.strip().split('\t')
-                id = int(id.strip().split('\-')[1])
+                id = int(id.strip().split('-')[1])
                 id2gold[id] = gold.strip()
             if 'H-' in line:
                 id, score, pred = line.strip().split('\t')
-                id = int(id.strip().split('\-')[1])
+                id = int(id.strip().split('-')[1])
                 id2pred[id] = pred.strip()
     return id2gold, id2pred
 
@@ -29,11 +29,11 @@ def first5accurate(pred_dir):
             id2gold, id2pred = file2dict(fname)
             correct = 0
             guess = 0
-            for k, v in id2gold:
+            for k, v in id2gold.items():
                 guess += 1
                 if v == id2pred[k]:
                     correct += 1
-            file_acc_list.append(item, round(correct/guess, 6))
+            file_acc_list.append((item, round(correct/guess, 6)))
     final_list = []
     for i in range(0, 5):
         candidate = (0, 0)
@@ -42,16 +42,18 @@ def first5accurate(pred_dir):
                 candidate = file_acc_list[j]
         file_acc_list.remove(candidate)
         final_list.append(candidate)
+    print('The first five best model on dev set:')
+    print(final_list)
     return final_list
 
 def deletefiles(final_list):
-    modelset = set([item[0][:-4] for item in final_list])
+    modelset = set([item[0][4:-4] for item in final_list])
     predset = set([item[0] for item in final_list])
     for item in os.listdir(model_dir):
-        if item not in modelset:
+        if item not in modelset and 'best' not in item and 'last' not in item:
             os.remove(model_dir+item)
     for item in os.listdir(pred_dir):
-        if item not in predset:
+        if item not in predset and 'best' not in item and 'last' not in item:
             os.remove(pred_dir+item)
 
 if __name__ == '__main__':

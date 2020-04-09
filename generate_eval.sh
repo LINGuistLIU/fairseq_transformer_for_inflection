@@ -39,8 +39,11 @@ fi
 
 python pred2task0Format.py $LANGUAGE $TYPE
 
-## Evaluation
-#echo "... evaluating ..."
-#python evaluate.py --ref "task0-data/${LANGUAGE}.${TYPE}" --hyp "predictions/${LANGUAGE}.${TYPE}.output"
-
+# Evaluation
+PREDICTION_DIR="predictions/${LANGUAGE}/${TYPE}-*"
+echo "... evaluating ..."
+for PREDICTION in ${PREDICTION_DIR}; do
+echo "${PREDICTION}"
+python evaluate.py --ref "task0-data/${LANGUAGE}.${TYPE}" --hyp "${PREDICTION}"
+done
 
