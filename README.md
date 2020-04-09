@@ -1,4 +1,4 @@
-This repository is about how to use the Transformer model from [Fairseq](https://github.com/pytorch/fairseq) from the command line for morphological inflection, specifically SIGMORPHON 2020 Shared Task task0.
+This repository is about how to use the Transformer model from [Fairseq](https://github.com/pytorch/fairseq) from the **command line** for morphological inflection, specifically [SIGMORPHON 2020 Shared Task task0](https://sigmorphon.github.io/sharedtasks/2020/task0/).
 
 You can find more information about how to use Fairseq from command line [here](https://fairseq.readthedocs.io/en/latest/command_line_tools.html).
 
