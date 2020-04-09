@@ -21,7 +21,7 @@ with open('checkpoints/'+lang+'-predictions/'+type+'-checkpoint_best.pt.txt') as
         if line[:2] == 'H-':
             id, score, pred = line.strip().split('\t')
             id = int(id.split('-')[1])
-            id2pred[id] = pred.replace(' ', '')
+            id2pred[id] = pred.replace(' ', '').replace('_', ' ')
     inputlines = [line.strip() for line in finput]
     for i, line in enumerate(inputlines):
         lines = line.strip().split('\t')
