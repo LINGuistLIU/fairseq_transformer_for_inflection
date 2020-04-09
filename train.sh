@@ -28,7 +28,7 @@ DRP=0.3
 # Batch size
 BTS=400
 # Max-update
-EPOCH=20000
+MXU=20000
 # Warmup update
 WMU=4000
 # Learning rate
@@ -70,7 +70,7 @@ fairseq-train "${DATABIN}/${LANGUAGE}" \
     --criterion=label_smoothed_cross_entropy \
     --label-smoothing="${LST}" \
     --batch-size="${BTS}" \
-    --max-update="${EPOCH}" \
+    --max-update="${MXU}" \
     --save-interval=50 \
     --seed="${SEED}"
 
