@@ -51,6 +51,8 @@ $ ./train.sh eng
 
 You can change parameters at the beginning of *train.sh* for parameter tuning.
 
+NOTE: The training takes a long time, especially if you run on a CPU.
+
 ### Generate and Evaluate
 
 To make the predictions for the dev or test data for a specific language, use the following command line.
