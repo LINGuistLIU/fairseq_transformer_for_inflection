@@ -34,15 +34,19 @@ def first5accurate(pred_dir):
                 if v == id2pred[k]:
                     correct += 1
             file_acc_list.append((item, round(correct/guess, 6)))
-    final_list = []
-    for i in range(0, 5):
-        candidate = (0, 0)
-        for j in range(len(file_acc_list)):
-            if file_acc_list[j][1] > candidate[1]:
-                candidate = file_acc_list[j]
-        file_acc_list.remove(candidate)
-        final_list.append(candidate)
-    print('The first five best model on dev set:')
+    if len(file_acc_list) < 5:
+        final_list = file_acc_list
+        print('The saved models and acc on the dev set:')
+    else:
+        final_list = []
+        for i in range(0, 5):
+            candidate = (0, 0)
+            for j in range(len(file_acc_list)):
+                if file_acc_list[j][1] > candidate[1]:
+                    candidate = file_acc_list[j]
+            file_acc_list.remove(candidate)
+            final_list.append(candidate)
+        print('The first five best model on dev set:')
     print(final_list)
     return final_list
 
