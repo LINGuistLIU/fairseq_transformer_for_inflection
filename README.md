@@ -14,7 +14,7 @@ You can find more information about how to use Fairseq from command line [here](
 
 To use the transformer model from Fairseq to inflection, you need to first preprocess your data, train the model, and generate and evaluate as the following step:
 
-#### Preprocess
+### Preprocess
 
 This process presupposes that you have stored the SIGMORPHON 2020 Share Task0 data in the directory *task0-data/*.
 
@@ -32,7 +32,7 @@ For example, if you want to preprocess the English data, use the following comma
 $ ./preprocess.sh eng
 ```
 
-#### Train
+### Train
 
 To train the model for a specific language, use the following command line:
 
@@ -49,7 +49,7 @@ $ ./train.sh eng
 
 You can change parameters at the beginning of *train.sh* for parameter tuning.
 
-#### Generate and Evaluate
+### Generate and Evaluate
 
 To make the predictions for the dev or test data for a specific language, use the following command line.
 
