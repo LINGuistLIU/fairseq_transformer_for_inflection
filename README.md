@@ -1,6 +1,5 @@
 This repository is about how to use the Transformer model from [Fairseq](https://github.com/pytorch/fairseq) from the **command line** for morphological inflection, specifically [SIGMORPHON 2020 Shared Task task0](https://sigmorphon.github.io/sharedtasks/2020/task0/).
 
-You can find more information about how to use Fairseq from command line [here](https://fairseq.readthedocs.io/en/latest/command_line_tools.html).
 
 ## Dependencies
 
@@ -70,3 +69,5 @@ For example, to make predictions for the English dev set, use the following comm
 ```
 $ ./generate_eval.sh eng dev
 ```
+
+The current script generates only with the best model on the training data. You can modify line 19 of the *generate_eval.sh* to make it generate with other models.
