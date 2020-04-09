@@ -5,6 +5,8 @@ This repository is about how to use the Transformer model from [Fairseq](https:/
 
 - PyTorch version >= 1.4.0
 
+  You can find how to install PyTorch [here](https://pytorch.org/get-started/locally/).
+
 - Python version >= 3.6
 
 - Fairseq (```$ pip install fairseq```)
