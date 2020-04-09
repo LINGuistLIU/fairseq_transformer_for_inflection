@@ -15,7 +15,15 @@ def reformat(fname, finputname, foutputname):
         open(finputname, 'w') as finput, \
         open(foutputname, 'w') as foutput:
         for line in f:
-            lemma, form, msd = line.strip().split('\t')
+            lines = line.strip().split('\t')
+            lemma = lines[0]
+            msd = lines[-1]
+            if len(lines) == 3:
+                form = lines[1]
+            elif len(lines) == 2:
+                form = '-'
+            else:
+                print('Please make sure each line in your file is a tab separated 3-column entry.')
             input = [letter for letter in lemma] + [tag for tag in msd.split(';')]
             output = [letter for letter in form]
             finput.write(' '.join(input) + '\n')

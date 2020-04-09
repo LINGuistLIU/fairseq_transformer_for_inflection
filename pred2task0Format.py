@@ -10,7 +10,12 @@ def goldid2input(fname):
     inputlist = []
     with open(fname) as f:
         for line in f:
-            lemma, form, msd = line.strip().split('\t')
+            lines = line.strip().split('\t')
+            if len(lines) == 3 or len(lines) == 2:
+                lemma = lines[0]
+                msd = lines[-1]
+            else:
+                print('Please make sure each line in your file is a tab separated 3-column entry.')
             inputlist.append((lemma, msd))
     return inputlist
 
