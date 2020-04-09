@@ -18,8 +18,8 @@ with open('checkpoints/'+lang+'-predictions/'+type+'-checkpoint_best.pt.txt') as
     open(outputdir+lang+'.'+type+'.output', 'w') as fw:
     id2pred = {}
     for line in fpred:
-        if line[:2] == 'T-':
-            id, pred = line.strip().split('\t')
+        if line[:2] == 'H-':
+            id, score, pred = line.strip().split('\t')
             id = int(id.split('-')[1])
             id2pred[id] = pred.replace(' ', '')
     inputlines = [line.strip() for line in finput]
