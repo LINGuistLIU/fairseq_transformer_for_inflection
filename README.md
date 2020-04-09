@@ -69,7 +69,13 @@ For example, to make predictions for the English dev set, use the following comm
 $ ./generate_eval.sh eng dev
 ```
 
-When you run on the dev set, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, find out models with the first 5 highest accuracy scores on the dev set, keep predictions from these five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, and delete all other models.
+When you run on the dev set:
+
+  if there more than 5 saved models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, find out models with the first 5 highest accuracy scores on the dev set, keep predictions from these five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, and delete all other models.
 It will keep the inflected form with the first five best models as well as ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_best.pt``` and ```checkpoints/3LETTER-LANGUAGE-CODE-models/checkpoint_last.pt```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
 
-When you run on the test set, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
+  if there are no more than 5 saved models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
+
+When you run on the test set: 
+
+it will generate the inflected form with models in ```checkpoints/3LETTER-LANGUAGE-CODE-models/```, give you the evaluation scores from the shared task evaluation metric for predictions of each model, and store predictions in the shared task format in the directory ```predictions/3LETTER-LANGUAGE-CODE/```.
