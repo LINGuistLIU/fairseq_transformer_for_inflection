@@ -26,7 +26,7 @@ def id2pred(fname):
             if line[:2] == 'H-':
                 id, score, pred = line.strip().split('\t')
                 id = int(id.split('-')[1])
-                id2pred_dict[id] = pred.replace(' ', '')
+                id2pred_dict[id] = pred.replace(' ', '').replace('_', ' ')
     return id2pred_dict
 
 def outputReformatted(inputlist, id2pred_dict, foutname):

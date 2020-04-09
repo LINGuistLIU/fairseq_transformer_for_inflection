@@ -11,11 +11,11 @@ def file2dict(fname):
     id2pred = {}
     with open(fname) as f:
         for line in f:
-            if 'T-' in line:
+            if 'T-' == line[:2]:
                 id, gold = line.strip().split('\t')
                 id = int(id.strip().split('-')[1])
                 id2gold[id] = gold.strip()
-            if 'H-' in line:
+            if 'H-' == line[:2]:
                 id, score, pred = line.strip().split('\t')
                 id = int(id.strip().split('-')[1])
                 id2pred[id] = pred.strip()

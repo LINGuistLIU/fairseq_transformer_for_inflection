@@ -16,10 +16,10 @@ def reformat(fname, finputname, foutputname):
         open(foutputname, 'w') as foutput:
         for line in f:
             lines = line.strip().split('\t')
-            lemma = lines[0]
-            msd = lines[-1]
+            lemma = lines[0].replace(' ', '_')
+            msd = lines[-1].replace(' ', '_')
             if len(lines) == 3:
-                form = lines[1]
+                form = lines[1].replace(' ', '_')
             elif len(lines) == 2:
                 form = '-'
             else:
