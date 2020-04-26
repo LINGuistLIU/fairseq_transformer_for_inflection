@@ -15,7 +15,7 @@ This repository is about how to use the Transformer model from [Fairseq](https:/
 
 ## Fairseq transformer for inflection
 
-To use the transformer model from Fairseq for inflection, you can preprocess your data, train the model, and generate and evaluate as the following steps:
+To use the transformer model from Fairseq for inflection, you can preprocess your data, train the model, and generate and evaluate by the following steps:
 
 ### Preprocess
 
@@ -39,7 +39,7 @@ $ ./preprocess.sh eng
 
 To train the model for a specific language, use the following command line:
 
-The trained models will be save in the directory ```checkpoints/3LETTER-LANGUAGE-CODE-models/```.
+The trained models will be saved in the directory ```checkpoints/3LETTER-LANGUAGE-CODE-models/```.
 
 ```
 $ ./train.sh 3LETTER-LANGUAGE-CODE
